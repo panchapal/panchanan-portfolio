@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Panchanan Pal | Frontend Developer</title>
+  <meta name="description" content="Portfolio of Panchanan Pal, a Frontend Developer specialized in React.js, Next.js, and modern CSS/UI frameworks. Explore interactive web apps.">
+  <meta name="keywords" content="Panchanan Pal, Frontend Developer, React, Next.js, Portfolio, Web Developer, Aditya Birla Mining, Buckil, KNI Airport">
+  <meta name="author" content="Panchanan Pal">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Panchanan Pal | Frontend Developer">
+  <meta property="og:description" content="Portfolio of Panchanan Pal, a Frontend Developer specialized in React.js, Next.js, and modern CSS/UI frameworks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/panchapal">
+  
+  <!-- FontAwesome & Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- HTML5 Canvas for the Liquid Rain Particle System -->
+    <canvas id="rain-canvas"></canvas>
+
+    <div class="content-wrapper">
+      
+      <!-- 1. NAVIGATION BAR -->
+      <header class="header-nav" id="header-nav">
+        <div class="nav-container">
+          <a href="#" class="logo" id="nav-logo">
+            <span>P</span>ANCHANAN.
+          </a>
+          
+          <nav>
+            <ul class="nav-links" id="nav-links">
+              <li class="nav-item"><a href="#home">Home</a></li>
+              <li class="nav-item"><a href="#about">About</a></li>
+              <li class="nav-item"><a href="#skills">Skills</a></li>
+              <li class="nav-item"><a href="#projects">Projects</a></li>
+              <li class="nav-item"><a href="#experience">Education</a></li>
+              <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="nav-controls">
+            <!-- Background Network Density Controller (Wows the user) -->
+            <button class="control-btn" id="rain-intensity-btn" title="Toggle Background Network">
+              <i class="fa-solid fa-circle-nodes"></i>
+            </button>
+            <!-- Theme Toggle -->
+            <button class="control-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+            <!-- Mobile Menu Toggle -->
+            <button class="control-btn menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. HERO SECTION -->
+      <section class="hero-section" id="home">
+        <div class="section-container hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">Available for Projects</div>
+            <h1 class="hero-title">
+              <span>Hi, I'm</span>
+              <span class="gradient-text">Panchanan Pal</span>
+            </h1>
+            <h2 class="hero-subtitle">Frontend Developer Crafting Liquid-Smooth Interfaces</h2>
+            <p class="hero-description">
+              I specialize in building scalable, production-grade web applications using React.js, Next.js, and modern styling solutions. Passionate about writing clean code and developing intuitive, responsive user experiences.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                View My Work <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                Get In Touch <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-portrait-container">
+            <div class="portrait-frame">
+              <div class="water-streaks-overlay"></div>
+              <img src="./pancha.jpeg" alt="Panchanan Pal Portrait" class="portrait-img">
+              <div class="portrait-caption">
+                <span class="name">Panchanan Pal</span>
+                <span class="role">Frontend Developer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ABOUT SECTION -->
+      <section class="about-section" id="about">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag">Overview</span>
+            <h2 class="section-title">About Me</h2>
+          </div>
+          
+          <div class="about-grid">
+            <div class="about-stats">
+              <div class="glass-panel stat-card">
+                <span class="stat-num" id="stat-projects">3+</span>
+                <span class="stat-label">Enterprise Projects</span>
+              </div>
+              <div class="glass-panel stat-card">
+                <span class="stat-num" id="stat-months">18+</span>
+                <span class="stat-label">Months Training</span>
+              </div>
+              <div class="glass-panel stat-card">
+                <span class="stat-num" id="stat-roles">6+</span>
+                <span class="stat-label">RBAC Roles Managed</span>
+              </div>
+              <div class="glass-panel stat-card">
+                <span class="stat-num" id="stat-commits">500+</span>
+                <span class="stat-label">Clean Commits</span>
+              </div>
+            </div>
+
+            <div class="about-text">
+              <p class="highlight-para">
+                I translate complex business requirements into elegant, high-performing interfaces.
+              </p>
+              <p>
+                My professional experience covers the full lifecycle of frontend development. From designing secure, role-based admin consoles for industrial clients like Aditya Birla Mining, to launching collaborative social platforms and passenger flight-and-bus ticketing modules.
+              </p>
+              <p>
+                I hold a Bachelor of Science (B.Sc.) in Life Sciences, which gave me strong analytical and logical reasoning capabilities. I combined this scientific approach with rigorous technical training to build pixel-perfect, highly responsive apps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SKILLS SECTION -->
+      <section class="skills-section" id="skills">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag">Expertise</span>
+            <h2 class="section-title">Technical Skills</h2>
+          </div>
+
+          <div class="skills-grid">
+            
+            <!-- Category 1 -->
+            <div class="glass-panel skills-category">
+              <h3 class="category-title">
+                <i class="fa-solid fa-code"></i> Languages & Core
+              </h3>
+              <div class="skills-list">
+                <span class="skill-tag"><i class="fa-brands fa-react" style="color: #61dbfb;"></i> React.js</span>
+                <span class="skill-tag"><i class="fa-solid fa-n" style="color: #ffffff;"></i> Next.js</span>
+                <span class="skill-tag"><i class="fa-brands fa-js" style="color: #f7df1e;"></i> JavaScript (ES6+)</span>
+                <span class="skill-tag"><i class="fa-solid fa-s" style="color: #764abc;"></i> Redux (Toolkit)</span>
+                <span class="skill-tag"><i class="fa-solid fa-check-double" style="color: #ff4a5a;"></i> Yup (Validation)</span>
+              </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="glass-panel skills-category">
+              <h3 class="category-title">
+                <i class="fa-solid fa-palette"></i> Styling & UI
+              </h3>
+              <div class="skills-list">
+                <span class="skill-tag"><i class="fa-brands fa-css3-alt" style="color: #264de4;"></i> CSS3 / HTML5</span>
+                <span class="skill-tag"><i class="fa-solid fa-wind" style="color: #38bdf8;"></i> Tailwind CSS</span>
+                <span class="skill-tag"><i class="fa-solid fa-layer-group" style="color: #007fff;"></i> Material UI (MUI)</span>
+                <span class="skill-tag"><i class="fa-solid fa-mobile-screen" style="color: #a855f7;"></i> Responsive Layouts</span>              </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="glass-panel skills-category">
+              <h3 class="category-title">
+                <i class="fa-solid fa-server"></i> Auth & Infrastructure
+              </h3>
+              <div class="skills-list">
+                <span class="skill-tag"><i class="fa-solid fa-users-gear" style="color: #10b981;"></i> RBAC (Access Control)</span>
+                <span class="skill-tag"><i class="fa-solid fa-id-card" style="color: #ef4444;"></i> LDAP Authentication</span>
+                <span class="skill-tag"><i class="fa-solid fa-cloud" style="color: #f97316;"></i> REST API Integration</span>
+                <span class="skill-tag"><i class="fa-solid fa-bolt" style="color: #646cff;"></i> Vite Build System</span>
+                <span class="skill-tag"><i class="fa-brands fa-git-alt" style="color: #f05032;"></i> Git / Version Control</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PROJECTS SECTION -->
+      <section class="projects-section" id="projects">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag">Case Studies</span>
+            <h2 class="section-title">Recent Work</h2>
+          </div>
+
+          <div class="projects-list">
+            
+            <!-- Project 1 -->
+            <div class="glass-panel project-card">
+              <div class="project-visual">
+                <img src="./project-asset-management.png" alt="Aditya Birla Mining Asset Management dashboard screenshot" class="project-screenshot">
+                <div class="project-icon-wrapper">
+                  <i class="fa-solid fa-helmet-safety"></i>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <h3>Asset Management System</h3>
+                  <div class="project-tech-stack">
+                    <span class="project-tech">React (Vite)</span>
+                    <span class="project-tech">MUI</span>
+                    <span class="project-tech">LDAP</span>
+                    <span class="project-tech">RBAC</span>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  A high-security asset management platform deployed for <strong>Aditya Birla Mining</strong>, ensuring seamless tracking of industrial hardware.
+                </p>
+                <ul class="project-bullets">
+                  <li>Developed role-based access control (RBAC) with 6 strict system permission scopes.</li>
+                  <li>Created end-to-end asset lifecycle flows: GR creation, unique asset ID, and QR code generation.</li>
+                  <li>Designed ticketing and maintenance tracking workflows with multi-role approvals.</li>
+                  <li>Integrated real-time email notifications for system reporting and threshold alerts.</li>
+                </ul>
+                <a href="#contact" class="project-link">Inquire Details <i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="glass-panel project-card">
+              <div class="project-visual">
+                <img src="./project-buckil.png" alt="Buckil travel social platform profile screenshot" class="project-screenshot">
+                <div class="project-icon-wrapper">
+                  <i class="fa-solid fa-earth-americas"></i>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <h3>Buckil – Travel Social Platform</h3>
+                  <div class="project-tech-stack">
+                    <span class="project-tech">Next.js</span>
+                    <span class="project-tech">Tailwind CSS</span>
+                    <span class="project-tech">Redux</span>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  An interactive travel-oriented social platform helping adventurers coordinate trips, share logs, and complete group goals.
+                </p>
+                <ul class="project-bullets">
+                  <li>Built a goal-based structure for posts, stories, and engagement metrics (likes, tags, followers).</li>
+                  <li>Developed complex goal state transitions (complete, favorite, unattainable, brag).</li>
+                  <li>Engineered timeline planners, post reposts, and duplication workflows with approval criteria.</li>
+                </ul>
+                <a href="#contact" class="project-link">Inquire Details <i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="glass-panel project-card">
+              <div class="project-visual">
+                <img src="./project-bus-booking.png" alt="Bengal Aerotropolis bus booking admin screenshot" class="project-screenshot">
+                <div class="project-icon-wrapper">
+                  <i class="fa-solid fa-bus"></i>
+                </div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">
+                  <h3>Bus Booking System</h3>
+                  <div class="project-tech-stack">
+                    <span class="project-tech">React (Vite)</span>
+                    <span class="project-tech">Tailwind CSS</span>
+                    <span class="project-tech">Yup</span>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  A high-throughput ticketing solution built for the KNI Airport bus shuttle services, streamlining bookings.
+                </p>
+                <ul class="project-bullets">
+                  <li>Created dynamic routing, scheduling, stop mapping, and custom distance-based fare calculators.</li>
+                  <li>Built comprehensive admin analytics panels for routes, sales graphs, and passenger logs.</li>
+                  <li>Programmed responsive client booking interfaces with print-to-PDF ticket generation.</li>
+                  <li>Integrated transactional email and WhatsApp notifications for instant booking confirmations.</li>
+                </ul>
+                <a href="#contact" class="project-link">Inquire Details <i class="fa-solid fa-chevron-right"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. EXPERIENCE & EDUCATION SECTION -->
+      <section class="experience-section" id="experience">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag">Journey</span>
+            <h2 class="section-title">Education & Training</h2>
+          </div>
+
+          <div class="timeline">
+            
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-panel timeline-content">
+                <div class="timeline-date">May 2025 - Present</div>
+                <h3 class="timeline-title">Frontend Developer</h3>
+                <h4 class="timeline-subtitle">Professional Work</h4>
+                <p class="timeline-desc">
+                  Developing robust, enterprise-scale web systems. Focused on building highly accessible user-permission dashboards, notification servers, and API integration modules.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-panel timeline-content">
+                <div class="timeline-date">Oct 2023 - Feb 2025</div>
+                <h3 class="timeline-title">Full Stack Frontend Development</h3>
+                <h4 class="timeline-subtitle">WebSkitter Academy</h4>
+                <p class="timeline-desc">
+                  Completed an intensive professional program. Mastered advanced Javascript (ES6+), React core paradigms (Context, Hooks, State), Next.js routing, state management with Redux, and responsive design systems.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-panel timeline-content">
+                <div class="timeline-date">2020 - 2023</div>
+                <h3 class="timeline-title">B.Sc. in Zoology, Botany & Physiology</h3>
+                <h4 class="timeline-subtitle">Ghatal Rabindra Satabarsiki Mahavidyalaya</h4>
+                <p class="timeline-desc">
+                  Bachelor of Science — Life Sciences. Built a strong foundation in systematic analysis, logical reasoning, data research, and scientific reporting.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CONTACT SECTION -->
+      <section class="contact-section" id="contact">
+        <div class="section-container">
+          <div class="section-header">
+            <span class="section-tag">Let's Connect</span>
+            <h2 class="section-title">Get In Touch</h2>
+          </div>
+
+          <div class="contact-grid">
+            
+            <div class="contact-info">
+              <div class="contact-card-wrapper">
+                
+                <!-- Phone -->
+                <div class="glass-panel contact-detail-card">
+                  <div class="contact-detail-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div class="contact-detail-text">
+                    <h4>Call Me</h4>
+                    <p><a href="tel:+919800400661">+91 9800400661</a></p>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="glass-panel contact-detail-card">
+                  <div class="contact-detail-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="contact-detail-text">
+                    <h4>Email Me</h4>
+                    <p><a href="mailto:panchananpal13@gmail.com">panchananpal13@gmail.com</a></p>
+                  </div>
+                </div>
+
+                <!-- Location -->
+                <div class="glass-panel contact-detail-card">
+                  <div class="contact-detail-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div class="contact-detail-text">
+                    <h4>Location</h4>
+                    <p>West Bengal, India</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Social links -->
+              <div class="socials-block">
+                <span class="socials-title">Follow My Codes</span>
+                <div class="socials-list">
+                  <a href="https://linkedin.com/in/panchananpal" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn Profile">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://github.com/panchapal" target="_blank" rel="noopener" class="social-link" aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Form -->
+            <form class="glass-panel contact-form" id="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Hi Panchanan, let's collaborate on..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Send Message <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Toast Alerts for Form submission feedback -->
+      <div class="form-toast" id="form-toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toast-message">Message sent successfully!</span>
+      </div>
+
+      <!-- Footer Credits -->
+      <footer class="footer-credits">
+        <p>© 2026 Panchanan Pal. Crafted with <span>❤</span> & a touch of rain.</p>
+      </footer>
+
+    </div>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
