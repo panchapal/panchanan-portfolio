@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website built with HTML, CSS, and JavaScript — featuring a glassmorphism UI, animated constellation particle-network background, and smooth scroll-driven reveal animations.
 
-![Portfolio Preview](https://panchanan-portfolio.vercel.app/)
+![Portfolio Preview](./image.png)
 
 🔗 **Live Demo:** [https://panchanan-portfolio.vercel.app/]
 
