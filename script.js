@@ -325,13 +325,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header-nav');
   const sections = document.querySelectorAll('section');
   const navItems = document.querySelectorAll('.nav-item');
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
 
-  window.addEventListener('scroll', () => {
+  function updateScrollState() {
+    const scrollPos = window.scrollY;
+
     // Header background toggle on scroll
-    if (window.scrollY > 50) {
+    if (scrollPos > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
+    }
+
+    // Scroll-to-Top Button visibility (appears after scrolling 400px)
+    if (scrollToTopBtn) {
+      if (scrollPos > 400) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
     }
 
     // Scroll Spy active nav items
@@ -339,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(sec => {
       const top = sec.offsetTop - 120;
       const height = sec.offsetHeight;
-      if (window.scrollY >= top && window.scrollY < top + height) {
+      if (scrollPos >= top && scrollPos < top + height) {
         currentSectionId = sec.getAttribute('id');
       }
     });
@@ -351,7 +363,11 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('active');
       }
     });
-  });
+  }
+
+  window.addEventListener('scroll', updateScrollState, { passive: true });
+  // Initial check on load
+  updateScrollState();
 
   /* ==========================================
      5. MOBILE MENU DRAWER
@@ -386,47 +402,41 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================
-     6. CSS SCROLL-DRIVEN ANIMATION FALLBACK
+     6. SCROLL REVEAL (INTERSECTION OBSERVER)
      ========================================== */
-  const supportsCSSScrollTimeline = CSS.supports('(animation-timeline: view()) and (animation-range: entry)');
-  
-  if (!supportsCSSScrollTimeline) {
-    console.log("Native CSS Scroll-driven timelines not supported. Falling back to IntersectionObserver.");
-    
-    const elementsToReveal = [
-      ...document.querySelectorAll('.hero-content'),
-      ...document.querySelectorAll('.hero-portrait-container'),
-      ...document.querySelectorAll('.about-text'),
-      ...document.querySelectorAll('.about-stats'),
-      ...document.querySelectorAll('.skills-category'),
-      ...document.querySelectorAll('.project-card'),
-      ...document.querySelectorAll('.timeline-item'),
-      ...document.querySelectorAll('.contact-info'),
-      ...document.querySelectorAll('.contact-form')
-    ];
+  const elementsToReveal = [
+    ...document.querySelectorAll('.hero-content'),
+    ...document.querySelectorAll('.hero-portrait-container'),
+    ...document.querySelectorAll('.about-text'),
+    ...document.querySelectorAll('.about-stats'),
+    ...document.querySelectorAll('.skills-category'),
+    ...document.querySelectorAll('.project-card'),
+    ...document.querySelectorAll('.timeline-item'),
+    ...document.querySelectorAll('.contact-info'),
+    ...document.querySelectorAll('.contact-form')
+  ];
 
-    // Add CSS fallback class to elements
-    elementsToReveal.forEach(el => {
-      el.classList.add('js-reveal');
-    });
-
-    // Create observer
+  if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          // Once revealed, we can unobserve
           revealObserver.unobserve(entry.target);
         }
       });
     }, {
       root: null,
-      threshold: 0.15,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.05,
+      rootMargin: '0px 0px -20px 0px'
     });
 
     elementsToReveal.forEach(el => {
+      el.classList.add('js-reveal');
       revealObserver.observe(el);
+    });
+  } else {
+    elementsToReveal.forEach(el => {
+      el.classList.add('active');
     });
   }
 
@@ -483,5 +493,18 @@ document.addEventListener('DOMContentLoaded', () => {
       pulses.push(new Pulse(rect.left + rect.width / 2, rect.top + rect.height / 2, colors.primary));
     }, 1500);
   });
+
+  /* ==========================================
+     8. SCROLL-TO-TOP BUTTON
+     ========================================== */
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 
 });
